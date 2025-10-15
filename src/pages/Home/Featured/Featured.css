@@ -1,0 +1,29 @@
+
+
+.featured-img {
+  position: relative;
+  background-image: url('../../../assets/home/featured.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 300px; 
+  z-index: 1;
+}
+
+.featured-img::before {
+   content: ''; 
+  position: absolute;
+   top:0; 
+  left: 0;
+  height: 100%;
+  width: 100%; 
+  background-color: rgba(0, 0, 0, 0.4); 
+   z-index: 2; 
+ } 
+
+
+ .featured-img > * {
+  position: relative;
+  z-index: 3;
+} 
+
