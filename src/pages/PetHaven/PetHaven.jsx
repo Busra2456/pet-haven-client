@@ -1,4 +1,4 @@
-import petHaven from '../../assets/home/dog1.jpg'
+import petHaven from '../../assets/home/06.jpg'
 const PetHaven = () => {
       return (
             <div>

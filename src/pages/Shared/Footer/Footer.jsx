@@ -3,9 +3,9 @@ const Footer = () => {
       return (
             <footer>
                <div 
-               className="footer sm:footer-horizontal bg-neutral text-neutral-content flex justify-end items-center"
+               className="footer sm:footer-horizontal bg-neutral text-neutral-content flex justify-center items-center "
                >
- <div className="bg-[#253246] w-full p-15 pl-80 text-center text-neutral-content">
+ <div className="bg-[#253246] p-15 w-full pl-80 text-center text-neutral-content mr-none">
    <aside className="">
     <div className="text-center  ">
    <h2 className="text-2xl font-semibold mb-4" >CONTACT US</h2>
@@ -21,7 +21,7 @@ const Footer = () => {
     </div>
   </aside>
  </div>
- <div className="bg-[#091122] w-full p-15  pr-80 text-center text-neutral-content">
+ <div className="bg-[#091122] w-full p-15 pr-80 text-center text-neutral-content">
    <nav>
     <h6 className=" text-2xl font-semibold mb-4">Follow Us</h6>
     <h2 className="mb-4">Join us on social media</h2>

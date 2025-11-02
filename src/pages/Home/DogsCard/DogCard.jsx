@@ -3,12 +3,12 @@ const DogCard = ({cart}) => {
     const {name,image,description} = cart; 
       return (
             <div >
-                  <div className="card bg-base-100 w-96 shadow-2xl ">
+                  <div className="card bg-base-100 w-96 shadow-2xl mb-10">
   <figure className="">
     <img
       src={image}
       alt="Shoes"
-      className="rounded-xl max-w-full" />
+      className="rounded-xl max-w-full min-h-full" />
   </figure>
   <div className="card-body space-y-3 items-center text-center">
     <h2 className="card-title text-3xl font-semibold text-black">{name}</h2>
