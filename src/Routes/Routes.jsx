@@ -5,6 +5,10 @@ import Main from "../Layout/Main";
 import Home from "../pages/Home/Home/Home";
 import Menu from "../pages/Menu/Menu";
 import Order from "../pages/Order/Order";
+import Login from "../pages/Login/Login";
+import SignUp from "../pages/SignUp/SignUp";
+import AddReview from "../pages/Home/Testimonials/AddReview";
+
 
 export const router = createBrowserRouter([
   {
@@ -23,7 +27,24 @@ export const router = createBrowserRouter([
         path:'/order/:category',
         element:<Order></Order>,
         
-      }
+      },
+      {
+        path: "/add-review/:dogId",
+        element:<AddReview></AddReview>,
+      },
+      {
+        path:'/login',
+        element:<Login></Login>
+      },
+
+      {
+        path:'/signup',
+        element:<SignUp></SignUp>
+      },   
+      
+             
+
+
 
 
     ]

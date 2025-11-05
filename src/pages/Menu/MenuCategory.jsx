@@ -3,6 +3,7 @@ import DogItems from "../Home/PopularMenu/DogItems";
 import Covers from "../Shared/Covers";
 import { useState } from "react";
 const MenuCategory = ({items,title,img,description}) => {
+      console.log("xxxxxxxxxxxx",items)
         const [dataLength,setDataLength] = useState(4);
         const [show4,setShoe4] = useState(false);
         const handleShow4 = () =>{
@@ -21,7 +22,7 @@ const MenuCategory = ({items,title,img,description}) => {
                   {title && img ?( <Link to={`/order/${title}`}> <Covers img={img} title={title} description={description}></Covers> </Link>) :title ? (<h2 className="text-3xl font-bold text-center mb-6" > </h2>
 
                   ): null}
-                  <div className="grid md:grid-cols-2 gap-10 my-16">
+                 <div div className="grid md:grid-cols-2 gap-10 my-16">
                   {
                        items.slice(0,dataLength).map(item=><DogItems
                         key={item._id}

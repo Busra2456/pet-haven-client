@@ -8,7 +8,10 @@ import Featured from "../Featured/Featured";
 import PopularMenu from "../PopularMenu/PopularMenu";
 import Testimonials from "../Testimonials/Testimonials";
 
+
 const Home = () => {
+   
+
       return (
             <div>
                    <Helmet>
@@ -23,6 +26,7 @@ const Home = () => {
                 <DogsCard></DogsCard>
                 <Featured></Featured>
                 <Testimonials></Testimonials>
+                 
             </div>
       );
 };
