@@ -49,11 +49,11 @@ const AuthProvider = ({children}) => {
                   //get token and store client
                   const userInfo = {email: currentUser.email};
                   axiosPublic.post(
-                        // '/jwt',
+                        '/jwt',
                         userInfo)
                   .then(res =>{
                         if (res.data.token){
-                              // localStorage.setItem('access-token',res.data.token);
+                              localStorage.setItem('access-token',res.data.token);
                                 setLoading(false);
                         }
                   })

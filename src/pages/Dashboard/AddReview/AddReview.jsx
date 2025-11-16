@@ -6,61 +6,58 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
 import {  Link, useLocation } from "react-router-dom";
-
-const AddReview = ({onReviewAdded }) => {
-       
-  // const location = useLocation();
-
- const { state } = useLocation(); 
-  // const { _id } = useParams();    
-  // const dog = state || {}; // ← এখানে ডেটা আসবে
-    // console.log("Dog data in AddReview:", dog);
-
-
-  const dog = state || {};         
-  const { name, image, description } = dog;
-  const axiosPublic = useAxiosPublic();
-   
-      const { register, handleSubmit, reset } = useForm();
-  const [rating, setRating] = useState(0);
-  
-  const {user} = useContext(AuthContext);
-// const navigate = useNavigate();
-
-  const onSubmit = async (data) => {
-      if (!user){
-            alert("Please log in before submitting a review!");
-      return;
-      }
-    const reviewData = {
-      dogId:dog._id,
-      name: user.displayName || data.name,
-      email: user.email || data.email,
-      photo:user.photoURL ||"https://i.ibb.co.com/RkTYjj4c/logo.png",
-      details: data.details,
-      rating,
-      createdAt: new Date(),
-      dogInfo: {
-        name,
-        image,
-        description,
-      },
-     
-    };
-    const res = await axiosPublic.post('/reviews', reviewData);
-    if (res.data.insertedId) {
-      alert("Review added successfully!");
-      reset();
-      setRating(0);
-      onReviewAdded();
-      // navigate(`/Testimonials/${_id}`, { state: { dog} })
-
-    }
-  };
-
-
+const AddReview = ({onReviewAdded}) => {
+             
+        // const location = useLocation();
+      
+       const { state } = useLocation(); 
+        // const { _id } = useParams();    
+        // const dog = state || {}; // ← এখানে ডেটা আসবে
+          // console.log("Dog data in AddReview:", dog);
+      
+      
+        const dog = state || {};         
+        const { name, image, description } = dog;
+        const axiosPublic = useAxiosPublic();
+         
+            const { register, handleSubmit, reset } = useForm();
+        const [rating, setRating] = useState(0);
+        
+        const {user} = useContext(AuthContext);
+      // const navigate = useNavigate();
+      
+        const onSubmit = async (data) => {
+            if (!user){
+                  alert("Please log in before submitting a review!");
+            return;
+            }
+          const reviewData = {
+            dogId:dog._id,
+            name: user.displayName || data.name,
+            email: user.email || data.email,
+            photo:user.photoURL ||"https://i.ibb.co.com/RkTYjj4c/logo.png",
+            details: data.details,
+            rating,
+            createdAt: new Date(),
+            dogInfo: {
+              name,
+              image,
+              description,
+            },
+           
+          };
+          const res = await axiosPublic.post('/reviews', reviewData);
+          if (res.data.insertedId) {
+            alert("Review added successfully!");
+            reset();
+            setRating(0);
+            onReviewAdded();
+            // navigate(`/Testimonials/${_id}`, { state: { dog} })
+      
+          }
+        };
       return (
-               <div className="max-w-5xl mx-auto my-10 bg-white p-6 rounded-2xl shadow-lg">
+     <div className="max-w-5xl mx-auto m-10 bg-white p6 rounded-2xl shadow-lg">
 
  <div className="p-5">
      <div className="text-center ">
@@ -112,11 +109,7 @@ const AddReview = ({onReviewAdded }) => {
         </button>
        
       </form> 
-    </div>
-
-      );
+    </div>      );
 };
 
 export default AddReview;
-
-

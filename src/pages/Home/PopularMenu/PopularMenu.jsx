@@ -1,9 +1,6 @@
 // import { useEffect, useState } from "react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
-import DogItems from "./DogItems";
 import useMenu from "../../../hooks/useMenu";
-import { Link } from "react-router-dom";
-import Covers from "../../Shared/Covers";
 import MenuCategory from "../../Menu/MenuCategory";
 
 
@@ -45,8 +42,8 @@ const PopularMenu = () => {
              items={popular}
              title="popular"
              
-             
-             ></MenuCategory> 
+                          ></MenuCategory> 
+
                   {/* <div className="text-center">
                  
          <Link

@@ -1,6 +1,8 @@
 import {useEffect, useState } from "react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import DogCard from "./DogCard";
+// import Testimonials from "../Testimonials/Testimonials";
+
 
 
 
@@ -11,6 +13,9 @@ const DogsCard = ({items}) => {
       const [dogCarts,setDogsCarts] = useState([]);
        const [dataLength,setDataLength] = useState(3);
         const [show3,setShoe3] = useState(false);
+                  
+
+
         const handleShow3 = () =>{
             if (show3){
                   setDataLength(3);
@@ -23,7 +28,7 @@ const DogsCard = ({items}) => {
 
         }
       useEffect(()=>{
-            fetch('http://localhost:5000/users')
+            fetch('http://localhost:5000/menu')
             .then(res=>res.json())
             .then(data =>{
                   const cardItems = data.filter(item => item.category === 'dogsItemCard')
@@ -32,6 +37,14 @@ const DogsCard = ({items}) => {
             )
            
       },[])
+
+          
+
+
+
+    
+
+
       return (
             <section>
                   <SectionTitle
@@ -44,6 +57,7 @@ const DogsCard = ({items}) => {
                    dogCarts.slice(0,dataLength).map(cart=><DogCard key={cart._id} cart={cart} ></DogCard>)
                   }
                 </div>
+                  
 
                   <div className="text-center">
               <button onClick={handleShow3} className=" uppercase btn border-2 hover:text-white py-6 px-20 text-[12px]  mb-2 border-b-black hover:bg-black">{show3 ? "Show Less" : "Show All"}</button>
@@ -57,3 +71,4 @@ const DogsCard = ({items}) => {
 };
 
 export default DogsCard;
+
